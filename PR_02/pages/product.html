@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-[#040711]">
+    <header class="bg-[#1d1f28] flex items-center justify-between p-4 relative">
+    <!-- Logo -->
+    <a class="text-xl font-bold text-white" href="../index.html">ProdShop</a>
+
+    <!-- Navegación -->
+    <nav class="flex items-center gap-4">
+        <a href="#" class="text-white">Productos</a>
+        <a href="#" class="text-white">Explore</a>
+        <a href="#" class="text-white">About Us</a>
+    </nav>
+
+    <!-- Mini-cart y botón -->
+    <div class="flex items-center gap-4 relative">
+        <button id="cartButton" class="flex items-center text-white gap-1">
+            <i class="fa-solid fa-cart-shopping"></i> Cart
+        </button>
+
+        <div id="miniCart"
+            class="absolute right-0 top-full mt-2 w-80 bg-[#1d1f28] text-white rounded-lg shadow-lg hidden z-50">
+            <div id="miniCartItems" class="flex flex-col gap-2 p-4 max-h-96 overflow-y-auto">
+                <!-- Productos se cargarán aquí dinámicamente -->
+            </div>
+            <div class="p-4 border-t border-gray-700 flex justify-between font-bold">
+                <span>Total:</span>
+                <span id="miniCartTotal">0€</span>
+            </div>
+            <div class="p-4 border-t border-gray-700">
+                <a href="cart.html"
+                    class="w-full bg-blue-600 text-white py-2 rounded-lg text-center hover:bg-blue-700 transition">
+                    Ver carrito
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login -->
+    <div class="flex items-center gap-2 text-white">
+        <a class="topA" href="login.html">Login</a>
+        <i class="fa-solid fa-circle-user"></i>
+    </div>
+</header>
+
+    <section class="max-w-5xl mx-auto mt-10 flex flex-col md:flex-row gap-8 px-4">
+        <div class="md:w-1/2 flex flex-col items-center gap-4">
+            <img id="mainImage" src=""
+                class="w-full h-96 object-cover rounded-xl border-2 border-blue-500 transition duration-300"
+                alt="Producto">
+            <div id="thumbnails" class="grid grid-cols-3 gap-4 mt-4 w-full"></div>
+        </div>
+
+        <div class="md:w-1/2 flex flex-col gap-6 text-white">
+            <h1 id="productName" class="text-3xl font-bold"></h1>
+            <p id="productPrice" class="text-blue-500 text-2xl font-semibold"></p>
+            <p id="productDesc" class="text-gray-300"></p>
+
+            <div>
+                <h3 class="font-semibold mb-2">Color</h3>
+                <div id="colorContainer" class="flex gap-4">
+                    <!-- Los botones se generarán aquí con JS -->
+                </div>
+                <p id="selectedColor" class="mt-2 text-gray-400">Selected: </p>
+            </div>
+
+            <div>
+                <h3 class="font-semibold mb-2">Quantity</h3>
+                <div class="flex items-center gap-4">
+                    <button id="decrease"
+                        class="w-10 h-10 bg-gray-700 rounded-lg text-xl font-bold hover:bg-gray-600 transition">−</button>
+                    <input id="quantity" type="text" value="1"
+                        class="w-16 text-center border rounded-lg py-2 bg-[#1d1f28] text-white" readonly>
+                    <button id="increase"
+                        class="w-10 h-10 bg-gray-700 rounded-lg text-xl font-bold hover:bg-gray-600 transition">+</button>
+                </div>
+            </div>
+
+            <button id="addToCart"
+                class="w-full bg-blue-600 text-white py-3 rounded-xl hover:bg-blue-700 transition font-semibold mt-4">Add
+                to Cart</button>
+        </div>
+    </section>
+
+    <script src="../assets/js/product.js"></script>
+</body>
+
+</html>

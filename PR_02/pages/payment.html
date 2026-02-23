@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-[#040711] min-h-screen flex items-center justify-center">
+
+    <div class="flex flex-col items-center w-full">
+        <header class="w-full">
+            <!-- Top Bar -->
+            <div class="bg-[#1d1f28] h-17 text-white flex flex-row items-center">
+                <a class="text-xl font-bold w-2/12 text-center" href="/PR_02/index.html">ProdShop</a>
+                <a class="flex flex-row items-center w-1/12 text-center mr-7" href>Categories<i
+                        class="fa-solid fa-angle-down ml-2" style="color: rgb(68, 124, 252);"></i></a>
+                <a class="flex items-center w-1/12 text-center" href>Explore<i class="fa-solid fa-angle-down ml-2"
+                        style="color: rgb(68, 124, 252);"></i></a>
+                <input
+                    class="placeholder:text-gray-500 placeholder:italic w-4/12 text-center focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Search for anything..." type="text" name="search" />
+                <a class="flex items-center w-1/12 text-center" href>About Us<i class="fa-solid fa-angle-down ml-2"
+                        style="color: rgb(68, 124, 252);"></i></a>
+                <div class="w-2/12 flex flex-row justify-center">
+                    <a class="flex items-center w-1/12 text-white" href="cart.html">Cart<i
+                            class="fa-solid fa-cart-shopping" style="color: rgb(68, 124, 252);"></i></a>
+                </div>
+                <div class="w-2/12 text-center">
+                    <a class="topA" href="login.html">Login</a>
+                    <i class="fa-solid fa-circle-user" style="color: rgb(68, 124, 252);"></i>
+                </div>
+            </div>
+        </header>
+        <!-- CONTENEDOR PRINCIPAL -->
+        <div
+            class="bg-[#1d1f28] m-4 md:m-10 rounded-xl h-auto max-w-5xl w-full flex flex-col md:flex-row justify-between items-stretch py-8">
+
+            <!-- FORMULARIO -->
+            <div class="flex flex-col justify-center items-stretch w-full md:w-3/5 px-4 md:mx-8">
+
+                <!-- Steps -->
+                <div class="text-white gap-3">
+                    <a href="cart.html">Cart</a>
+                    <i class="fa-solid fa-angle-right text-blue-500"></i>
+                    <a href="shipping.html">Shipping</a>
+                    <i class="fa-solid fa-angle-right text-blue-500"></i>
+                    <a class="font-bold" href="payment.html">Payment</a>
+                </div>
+
+                <!-- Payment Form -->
+                <div class="text-white flex flex-col gap-6 mt-8 w-full">
+                    <h1 class="text-3xl font-bold">
+                        Payment details
+                        <i class="fa-solid fa-wallet text-blue-500"></i>
+                    </h1>
+
+                    <form class="flex flex-col gap-4">
+
+                        <!-- PayPal -->
+                        <div class="flex justify-between border border-white rounded-lg p-4 w-full items-center">
+                            <div>
+                                <input type="radio" name="payment">
+                                <label>PayPal</label>
+                            </div>
+                            <i class="fa-brands fa-paypal text-blue-500"></i>
+                        </div>
+
+                        <!-- Credit Card -->
+                        <div class="flex flex-col border border-white rounded-lg p-4 w-full gap-4">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <input type="radio" name="payment">
+                                    <label>Credit Card</label>
+                                </div>
+                                <div class="flex gap-2">
+                                    <i class="fa-brands fa-cc-visa text-blue-500"></i>
+                                    <i class="fa-brands fa-cc-mastercard text-blue-500"></i>
+                                    <i class="fa-brands fa-cc-amex text-blue-500"></i>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col gap-4">
+
+                                <div class="flex flex-col gap-2 w-full">
+                                    <label>Card number</label>
+                                    <input
+                                        class="px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 text-white bg-transparent"
+                                        type="text" placeholder="0000 0000 0000 0000">
+                                </div>
+
+                                <!-- Expiry + CVV -->
+                                <div class="flex flex-col md:flex-row gap-6 w-full">
+                                    <div class="flex flex-col gap-2 w-full md:w-1/2">
+                                        <label>Expiry date</label>
+                                        <input
+                                            class="px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 text-white bg-transparent"
+                                            type="text" placeholder="MM/YY">
+                                    </div>
+                                    <div class="flex flex-col gap-2 w-full md:w-1/2">
+                                        <label>CVV</label>
+                                        <input
+                                            class="px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 text-white bg-transparent"
+                                            type="text" placeholder="***">
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col gap-2 w-full">
+                                    <label>Cardholder Name</label>
+                                    <input
+                                        class="px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 text-white bg-transparent"
+                                        type="text" placeholder="Cardholder Name">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Buy Now Pay Later -->
+                        <div class="flex justify-between border border-white rounded-lg p-4 w-full items-center">
+                            <div>
+                                <input type="radio" name="payment">
+                                <label>Buy Now, Pay Later</label>
+                            </div>
+                            <i class="fa-solid fa-calendar text-blue-500"></i>
+                        </div>
+
+                        <!-- Apple Pay -->
+                        <div class="flex justify-between border border-white rounded-lg p-4 w-full items-center">
+                            <div>
+                                <input type="radio" name="payment">
+                                <label>Apple Pay</label>
+                            </div>
+                            <i class="fa-brands fa-cc-apple-pay text-blue-500"></i>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+            <!-- RESUMEN -->
+            <div
+                class="w-full md:w-2/5 flex flex-col items-center justify-start gap-4 px-4 py-8 bg-gray-700 md:mr-7 rounded-lg mt-8 md:mt-0">
+                <h2 class="text-center text-white font-bold w-full">Carrito</h2>
+                <button
+                    class="w-full bg-[#1d1f28] text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300">
+                    Pay
+                </button>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

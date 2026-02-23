@@ -1,0 +1,50 @@
+[
+  {
+    "id": "prod001",
+    "name": "Gaming Keyboard",
+    "description": "Teclado gaming con iluminación RGB y diseño ergonómico.",
+    "price": 79.99,
+    "images": [
+      "../assets/img/keyboard.png",
+      "../assets/img/keyboard2.png",
+      "../assets/img/keyboard3.png"
+    ],
+    "colors": ["Black", "White"]
+  },
+  {
+    "id": "prod002",
+    "name": "Gaming Mouse",
+    "description": "Ratón gaming ergonómico con alta precisión.",
+    "price": 54.99,
+    "images": [
+      "../assets/img/mouse.png",
+      "../assets/img/mouse2.png",
+      "../assets/img/mouse3.png"
+    ],
+    "colors": ["Black", "White"]
+  },
+  {
+    "id": "prod003",
+    "name": "Gaming Headset",
+    "description": "Auriculares gaming con sonido envolvente y micrófono.",
+    "price": 129.99,
+    "images": [
+      "../assets/img/headset.png",
+      "../assets/img/headset2.png",
+      "../assets/img/headset3.png"
+    ],
+    "colors": ["Black", "White"]
+  },
+  {
+    "id": "prod004",
+    "name": "Wheel SIM Racing",
+    "description": "Volante de simulación para juegos de carreras realistas.",
+    "price": 549.99,
+    "images": [
+      "../assets/img/wheel.png",
+      "../assets/img/wheel2.png",
+      "../assets/img/wheel3.png"
+    ],
+    "colors": ["Black", "White"]
+  }
+]

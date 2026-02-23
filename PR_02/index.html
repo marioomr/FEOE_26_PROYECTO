@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-[#040711]">
+    <header class="bg-[#1d1f28] w-full shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="../index.html" class="text-xl font-bold text-white">ProdShop</a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex md:items-center md:gap-6">
+                    <a href="#" class="text-white hover:text-blue-400 transition">Productos</a>
+                    <a href="#" class="text-white hover:text-blue-400 transition">Explore</a>
+                    <a href="#" class="text-white hover:text-blue-400 transition">About Us</a>
+                </div>
+
+                <!-- Right Section: Cart + Login -->
+                <div class="flex items-center gap-4">
+
+                    <!-- Cart Button -->
+                    <div class="relative">
+                        <button id="cartButton"
+                            class="flex items-center gap-1 text-white hover:text-blue-400 transition">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="hidden md:inline">Cart</span>
+                        </button>
+
+                        <!-- Mini Cart -->
+                        <div id="miniCart"
+                            class="absolute right-0 top-full mt-2 w-80 bg-[#1d1f28] text-white rounded-lg shadow-lg hidden z-50">
+                            <div id="miniCartItems" class="flex flex-col gap-2 p-4 max-h-96 overflow-y-auto">
+                                <!-- Productos se cargarán aquí dinámicamente -->
+                            </div>
+                            <div class="p-4 border-t border-gray-700 flex justify-between font-bold">
+                                <span>Total:</span>
+                                <span id="miniCartTotal">0€</span>
+                            </div>
+                            <div class="p-4 border-t border-gray-700">
+                                <a href="/PR_02/pages/cart.html"
+                                    class="w-full bg-blue-600 text-white py-2 rounded-lg text-center hover:bg-blue-700 transition">
+                                    Ver carrito
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Login -->
+                    <div class="flex items-center gap-2 text-white">
+                        <a class="topA hover:text-blue-400 transition" href="/PR_02/pages/login.html">Login</a>
+                        <i class="fa-solid fa-circle-user"></i>
+                    </div>
+
+                    <!-- Hamburger Button -->
+                    <div class="md:hidden">
+                        <button id="menuButton" class="text-white focus:outline-none">
+                            <i class="fa-solid fa-bars text-2xl"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden hidden bg-[#1d1f28] px-4 pt-2 pb-4 flex flex-col gap-2">
+            <a href="#" class="text-white hover:text-blue-400 transition">Productos</a>
+            <a href="#" class="text-white hover:text-blue-400 transition">Explore</a>
+            <a href="#" class="text-white hover:text-blue-400 transition">About Us</a>
+        </div>
+    </header>
+
+
+    <section class="bg-transparent pt-6 pb-10">
+        <h1
+            class="font-sans text-3xl font-bold text-center rounded-xl w-180 mt-8 py-4 justify-self-center bg-[#1d1f28] text-white">
+            Bienvenido a nuestra tienda en línea
+        </h1>
+
+        <div class="flex flex-row flex-wrap gap-4 justify-center mt-10">
+            <div
+                class="flex flex-col items-center product-card rounded-xl border-2 border-blue-500 px-8 py-4 hover:bg-indigo-900">
+                <img class="w-40 h-40 object-contain" src="assets/img/keyboard.png">
+                <a href="pages/product.html?id=prod001" class="text-white">Gaming Keyboard</a>
+                <span class="text-white">79.99€</span>
+            </div>
+            <div
+                class="flex flex-col items-center product-card rounded-xl border-2 border-blue-500 px-8 py-4 hover:bg-indigo-900">
+                <img class="w-40 h-40 object-contain" src="assets/img/mouse.png">
+                <a href="pages/product.html?id=prod002" class="text-white">Gaming Mouse</a>
+                <span class="text-white">54.99€</span>
+            </div>
+            <div
+                class="flex flex-col items-center product-card rounded-xl border-2 border-blue-500 px-8 py-4 hover:bg-indigo-900">
+                <img class="w-40 h-40 object-contain" src="assets/img/headset.png">
+                <a href="pages/product.html?id=prod003" class="text-white">Gaming Headset</a>
+                <span class="text-white">129.99€</span>
+            </div>
+            <div
+                class="flex flex-col items-center product-card rounded-xl border-2 border-blue-500 px-8 py-4 hover:bg-indigo-900">
+                <img class="w-40 h-40 object-contain" src="assets/img/wheel.png">
+                <a href="pages/product.html?id=prod004" class="text-white">Wheel SIM Racing</a>
+                <span class="text-white">549.99€</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-transparent py-8">
+        <h2 class="font-sans text-2xl font-bold text-center justify-self-center bg-[#1d1f28] text-white w-full py-4">
+            ¿Por qué elegirnos?
+        </h2>
+        <div class="flex flex-row flex-wrap gap-30 justify-center mt-4 ">
+            <i class="fa-regular fa-handshake text-8xl item-center" style="color: rgb(68, 124, 252);"></i>
+            <ul class="text-white flex flex-col gap-2 justify-center list-disc marker:text-sky-400">
+                <li>Amplia selección de productos de alta calidad.</li>
+                <li>Precios competitivos y ofertas exclusivas.</li>
+                <li>Envío rápido y seguro a todo el mundo.</li>
+                <li>Atención al cliente excepcional.</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="bg-transparent">
+        <div class="bg-[#1d1f28] text-white p-8 text-center ">
+            <p>&copy; 2024 ProdShop. Todos los derechos reservados.</p>
+            <p>Contacto:
+                <a class="text-blue-500" href="mailto:contacto@prodshop.com">contacto@prodshop.com</a>
+            </p>
+        </div>
+    </footer>
+     <script src="/PR_02/assets/js/main.js"></script>
+</body>
+
+</html>
