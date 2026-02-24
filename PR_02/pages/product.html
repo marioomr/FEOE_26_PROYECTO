@@ -10,47 +10,76 @@
 </head>
 
 <body class="bg-[#040711]">
-    <header class="bg-[#1d1f28] flex items-center justify-between p-4 relative">
-    <!-- Logo -->
-    <a class="text-xl font-bold text-white" href="../index.html">ProdShop</a>
+    <header class="bg-[#1d1f28] w-full shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
 
-    <!-- Navegación -->
-    <nav class="flex items-center gap-4">
-        <a href="#" class="text-white">Productos</a>
-        <a href="#" class="text-white">Explore</a>
-        <a href="#" class="text-white">About Us</a>
-    </nav>
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="/PR_02/index.html" class="text-xl font-bold text-white">ProdShop</a>
+                </div>
 
-    <!-- Mini-cart y botón -->
-    <div class="flex items-center gap-4 relative">
-        <button id="cartButton" class="flex items-center text-white gap-1">
-            <i class="fa-solid fa-cart-shopping"></i> Cart
-        </button>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex md:items-center md:gap-6">
+                    <a href="/PR_02/pages/items.html" class="text-white hover:text-blue-400 transition">Productos</a>
+                    <a href="#" class="text-white hover:text-blue-400 transition">Explore</a>
+                    <a href="#" class="text-white hover:text-blue-400 transition">About Us</a>
+                </div>
 
-        <div id="miniCart"
-            class="absolute right-0 top-full mt-2 w-80 bg-[#1d1f28] text-white rounded-lg shadow-lg hidden z-50">
-            <div id="miniCartItems" class="flex flex-col gap-2 p-4 max-h-96 overflow-y-auto">
-                <!-- Productos se cargarán aquí dinámicamente -->
-            </div>
-            <div class="p-4 border-t border-gray-700 flex justify-between font-bold">
-                <span>Total:</span>
-                <span id="miniCartTotal">0€</span>
-            </div>
-            <div class="p-4 border-t border-gray-700">
-                <a href="cart.html"
-                    class="w-full bg-blue-600 text-white py-2 rounded-lg text-center hover:bg-blue-700 transition">
-                    Ver carrito
-                </a>
+                <!-- Right Section: Cart + Login -->
+                <div class="flex items-center gap-4">
+
+                    <!-- Cart Button -->
+                    <div class="relative">
+                        <button id="cartButton"
+                            class="flex items-center gap-1 text-white hover:text-blue-400 transition">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="hidden md:inline">Cart</span>
+                        </button>
+
+                        <!-- Mini Cart -->
+                        <div id="miniCart"
+                            class="absolute right-0 top-full mt-2 w-80 bg-[#1d1f28] text-white rounded-lg shadow-lg hidden z-50">
+                            <div id="miniCartItems" class="flex flex-col gap-2 p-4 max-h-96 overflow-y-auto">
+                                <!-- Productos se cargarán aquí dinámicamente -->
+                            </div>
+                            <div class="p-4 border-t border-gray-700 flex justify-between font-bold">
+                                <span>Total:</span>
+                                <span id="miniCartTotal">0€</span>
+                            </div>
+                            <div class="p-4 border-t border-gray-700">
+                                <a href="/PR_02/pages/cart.html"
+                                    class="w-full bg-blue-600 text-white py-2 rounded-lg text-center hover:bg-blue-700 transition">
+                                    Ver carrito
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Login -->
+                    <div class="flex items-center gap-2 text-white">
+                        <a class="topA hover:text-blue-400 transition" href="/PR_02/pages/login.html">Login</a>
+                        <i class="fa-solid fa-circle-user"></i>
+                    </div>
+
+                    <!-- Hamburger Button -->
+                    <div class="md:hidden">
+                        <button id="menuButton" class="text-white focus:outline-none">
+                            <i class="fa-solid fa-bars text-2xl"></i>
+                        </button>
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Login -->
-    <div class="flex items-center gap-2 text-white">
-        <a class="topA" href="login.html">Login</a>
-        <i class="fa-solid fa-circle-user"></i>
-    </div>
-</header>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden hidden bg-[#1d1f28] px-4 pt-2 pb-4 flex flex-col gap-2">
+            <a href="#" class="text-white hover:text-blue-400 transition">Productos</a>
+            <a href="#" class="text-white hover:text-blue-400 transition">Explore</a>
+            <a href="#" class="text-white hover:text-blue-400 transition">About Us</a>
+        </div>
+    </header>
 
     <section class="max-w-5xl mx-auto mt-10 flex flex-col md:flex-row gap-8 px-4">
         <div class="md:w-1/2 flex flex-col items-center gap-4">

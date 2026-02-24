@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="flex flex-col min-h-screen bg-[#040711] text-white">
+
+    <!-- Header -->
+    <header class="w-full shadow-md bg-[#1d1f28]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="/PR_02/index.html" class="text-xl font-bold text-white">ProdShop</a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex md:items-center md:gap-6">
+                    <a href="/PR_02/pages/items.html" class="hover:text-blue-400 transition">Productos</a>
+                    <a href="#" class="hover:text-blue-400 transition">Explore</a>
+                    <a href="#" class="hover:text-blue-400 transition">About Us</a>
+                </div>
+
+                <!-- Right Section: Cart + Login -->
+                <div class="flex items-center gap-4">
+
+                    <!-- Cart Button -->
+                    <div class="relative">
+                        <button id="cartButton" class="flex items-center gap-1 hover:text-blue-400 transition">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="hidden md:inline">Cart</span>
+                        </button>
+
+                        <!-- Mini Cart -->
+                        <div id="miniCart"
+                            class="absolute right-0 top-full mt-2 w-80 bg-[#1d1f28] text-white rounded-lg shadow-lg hidden z-50">
+                            <div id="miniCartItems" class="flex flex-col gap-2 p-4 max-h-96 overflow-y-auto">
+                                <!-- Productos se cargarán aquí dinámicamente -->
+                            </div>
+                            <div class="p-4 border-t border-gray-700 flex justify-between font-bold">
+                                <span>Total:</span>
+                                <span id="miniCartTotal">0€</span>
+                            </div>
+                            <div class="p-4 border-t border-gray-700">
+                                <a href="/PR_02/pages/cart.html"
+                                    class="w-full bg-blue-600 text-white py-2 rounded-lg text-center hover:bg-blue-700 transition">
+                                    Ver carrito
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Login -->
+                    <div class="flex items-center gap-2">
+                        <a class="hover:text-blue-400 transition" href="/PR_02/pages/login.html">Login</a>
+                        <i class="fa-solid fa-circle-user"></i>
+                    </div>
+
+                    <!-- Hamburger Button -->
+                    <div class="md:hidden">
+                        <button id="menuButton" class="focus:outline-none">
+                            <i class="fa-solid fa-bars text-2xl"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden hidden bg-[#1d1f28] px-4 pt-2 pb-4 flex flex-col gap-2">
+            <a href="#" class="hover:text-blue-400 transition">Productos</a>
+            <a href="#" class="hover:text-blue-400 transition">Explore</a>
+            <a href="#" class="hover:text-blue-400 transition">About Us</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="flex flex-col flex-grow items-center justify-between w-full px-4 text-center">
+        <div class="pt-20 flex flex-col items-center gap-4">
+            <i class="fa-solid fa-circle-check text-6xl" style="color: rgb(68, 124, 252);"></i>
+            <h1 class="font-bold text-3xl">Thank you for your purchase</h1>
+            <h2 class="text-xl text-gray-200">
+                We've received your order. It will ship in 5-7 days.<br>
+                Your order number is #000000xx
+            </h2>
+        </div>
+
+        <a class="text-blue-500 mb-8 hover:text-blue-700 transition" href="../index.html">Go back to the shop</a>
+    </section>
+
+</body>
+
+</html>

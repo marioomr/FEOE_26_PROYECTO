@@ -1,26 +1,4 @@
-// Toggle mobile menu
-const menuButton = document.getElementById('menuButton');
-const mobileMenu = document.getElementById('mobileMenu');
-menuButton.addEventListener('click', () => {
-  mobileMenu.classList.toggle('hidden');
-});
-
-// Toggle mini-cart
-const cartButton = document.getElementById('cartButton');
-const miniCart = document.getElementById('miniCart');
-cartButton.addEventListener('click', () => {
-  miniCart.classList.toggle('hidden');
-});
-
-// Click outside to close mini-cart
-document.addEventListener('click', (e) => {
-  if (!miniCart.contains(e.target) && !cartButton.contains(e.target)) {
-    miniCart.classList.add('hidden');
-  }
-});
-
-// Cargar contenedor productos en index
-const contenedor = document.getElementById("productos");
+const contenedor = document.getElementById("productsGrid");
 
 fetch("/PR_02/assets/data/products.json")
   .then(res => res.json())
@@ -43,7 +21,7 @@ function crearCard(producto) {
   `;
 
   card.innerHTML = `
-    <a href="pages/product.html?id=${producto.id}">
+    <a href="pages/items.html?id=${producto.id}">
       <img src="${producto.images[0]}" class="w-40 h-40 object-contain mb-2">
       <h3 class="text-white font-semibold">${producto.name}</h3>
       <p class="text-blue-500 font-bold">${producto.price}€</p>
