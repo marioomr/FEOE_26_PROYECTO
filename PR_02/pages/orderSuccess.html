@@ -1,101 +1,156 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Producto</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <title>Order Confirmed – ProdShop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+<body class="bg-[#040711] min-h-screen text-white">
 
-<body class="flex flex-col min-h-screen bg-[#040711] text-white">
+    <!-- HEADER -->
+    <header class="bg-[#1d1f28]/95 backdrop-blur-sm w-full border-b border-white/5 sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center gap-8">
 
-    <!-- Header -->
-    <header class="w-full shadow-md bg-[#1d1f28]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
+            <!-- Logo -->
+            <a href="/PR_02/index.html" class="flex items-center gap-2 flex-shrink-0">
+                <span class="text-base font-bold text-white tracking-tight">ProdShop</span>
+            </a>
 
-                <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <a href="/PR_02/index.html" class="text-xl font-bold text-white">ProdShop</a>
-                </div>
+            <!-- Nav -->
+            <nav class="hidden md:flex items-center gap-1 flex-1">
+                <a href="/PR_02/pages/items.html"
+                    class="px-3 py-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 text-sm transition">
+                    Productos
+                </a>
+                <a href="#"
+                    class="px-3 py-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 text-sm transition">
+                    Explore
+                </a>
+                <a href="#"
+                    class="px-3 py-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 text-sm transition">
+                    About Us
+                </a>
+            </nav>
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex md:items-center md:gap-6">
-                    <a href="/PR_02/pages/items.html" class="hover:text-blue-400 transition">Productos</a>
-                    <a href="#" class="hover:text-blue-400 transition">Explore</a>
-                    <a href="#" class="hover:text-blue-400 transition">About Us</a>
-                </div>
+            <!-- Right: cart + login + hamburger -->
+            <div class="flex items-center gap-2">
 
-                <!-- Right Section: Cart + Login -->
-                <div class="flex items-center gap-4">
+                <!-- Cart -->
+                <div class="relative">
+                    <button id="cartButton"
+                        class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 text-sm transition">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="hidden md:inline">Cart</span>
+                    </button>
 
-                    <!-- Cart Button -->
-                    <div class="relative">
-                        <button id="cartButton" class="flex items-center gap-1 hover:text-blue-400 transition">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            <span class="hidden md:inline">Cart</span>
-                        </button>
-
-                        <!-- Mini Cart -->
-                        <div id="miniCart"
-                            class="absolute right-0 top-full mt-2 w-80 bg-[#1d1f28] text-white rounded-lg shadow-lg hidden z-50">
-                            <div id="miniCartItems" class="flex flex-col gap-2 p-4 max-h-96 overflow-y-auto">
-                                <!-- Productos se cargarán aquí dinámicamente -->
-                            </div>
-                            <div class="p-4 border-t border-gray-700 flex justify-between font-bold">
-                                <span>Total:</span>
-                                <span id="miniCartTotal">0€</span>
-                            </div>
-                            <div class="p-4 border-t border-gray-700">
-                                <a href="/PR_02/pages/cart.html"
-                                    class="w-full bg-blue-600 text-white py-2 rounded-lg text-center hover:bg-blue-700 transition">
-                                    Ver carrito
-                                </a>
-                            </div>
+                    <!-- Mini cart dropdown -->
+                    <div id="miniCart"
+                        class="hidden absolute right-0 top-full mt-2 w-80 bg-[#1d1f28] border border-white/10 rounded-xl shadow-2xl z-50">
+                        <div class="px-4 pt-4 pb-1 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Tu carrito</span>
+                        </div>
+                        <div id="miniCartItems" class="flex flex-col gap-3 px-4 py-3 max-h-64 overflow-y-auto"></div>
+                        <div class="px-4 py-3 border-t border-white/10 flex justify-between text-sm font-semibold text-white">
+                            <span>Total</span>
+                            <span id="miniCartTotal" class="text-blue-400">0€</span>
+                        </div>
+                        <div class="px-4 pb-4">
+                            <a href="/PR_02/pages/cart.html"
+                                class="block w-full text-center bg-gradient-to-r from-blue-500 to-blue-700 hover:opacity-90 text-white text-sm font-semibold py-2 rounded-lg transition">
+                                Ver carrito
+                            </a>
                         </div>
                     </div>
-
-                    <!-- Login -->
-                    <div class="flex items-center gap-2">
-                        <a class="hover:text-blue-400 transition" href="/PR_02/pages/login.html">Login</a>
-                        <i class="fa-solid fa-circle-user"></i>
-                    </div>
-
-                    <!-- Hamburger Button -->
-                    <div class="md:hidden">
-                        <button id="menuButton" class="focus:outline-none">
-                            <i class="fa-solid fa-bars text-2xl"></i>
-                        </button>
-                    </div>
-
                 </div>
+
+                <!-- Login -->
+                <a href="/PR_02/pages/login.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 text-sm transition">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <span class="hidden md:inline">Login</span>
+                </a>
+
+                <!-- Hamburger -->
+                <button id="menuButton"
+                    class="md:hidden w-8 h-8 flex items-center justify-center rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-white/5 px-4 py-3 flex flex-col gap-1">
+        <a href="/PR_02/pages/items.html"
+            class="px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 text-sm transition">
+            Productos
+        </a>
+        <a href="#"
+            class="px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 text-sm transition">
+            Explore
+        </a>
+        <a href="#"
+            class="px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 text-sm transition">
+            About Us
+        </a>
+        <div class="border-t border-white/5 mt-2 pt-2">
+            <a href="/PR_02/pages/login.html"
+                class="px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 text-sm transition flex items-center gap-2">
+                <i class="fa-solid fa-circle-user"></i> Login
+            </a>
+        </div>
+    </div>
+</header>
+
+
+    <!-- MAIN -->
+    <main class="max-w-2xl mx-auto px-4 sm:px-6 py-16 flex flex-col items-center gap-8">
+
+        <!-- Confirmation card -->
+        <div class="w-full bg-[#1d1f28] border border-white/8 rounded-2xl p-8 flex flex-col items-center gap-4 text-center">
+            <div class="w-16 h-16 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
+                <i class="fa-solid fa-circle-check text-blue-400 text-3xl"></i>
+            </div>
+            <div>
+                <h1 class="text-2xl font-bold text-white">¡Gracias por tu compra!</h1>
+                <p class="text-gray-400 text-sm mt-2">
+                    Hemos recibido tu pedido. Se enviará en 5–7 días hábiles.
+                </p>
+            </div>
+            <div class="bg-white/5 border border-white/8 rounded-xl px-6 py-3 text-sm">
+                <span class="text-gray-400">Número de pedido: </span>
+                <span id="orderNumber" class="text-white font-bold tracking-widest"></span>
             </div>
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="md:hidden hidden bg-[#1d1f28] px-4 pt-2 pb-4 flex flex-col gap-2">
-            <a href="#" class="hover:text-blue-400 transition">Productos</a>
-            <a href="#" class="hover:text-blue-400 transition">Explore</a>
-            <a href="#" class="hover:text-blue-400 transition">About Us</a>
-        </div>
-    </header>
+        <!-- Order summary -->
+        <div class="w-full bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-4">
+            <h2 class="text-white font-bold text-lg">Resumen del pedido</h2>
 
-    <!-- Main Content -->
-    <section class="flex flex-col flex-grow items-center justify-between w-full px-4 text-center">
-        <div class="pt-20 flex flex-col items-center gap-4">
-            <i class="fa-solid fa-circle-check text-6xl" style="color: rgb(68, 124, 252);"></i>
-            <h1 class="font-bold text-3xl">Thank you for your purchase</h1>
-            <h2 class="text-xl text-gray-200">
-                We've received your order. It will ship in 5-7 days.<br>
-                Your order number is #000000xx
-            </h2>
+            <!-- Items -->
+            <div id="order" class="flex flex-col gap-3"></div>
+
+            <!-- Totals -->
+            <div id="orderTotals" class="border-t border-white/8 pt-4 flex flex-col gap-2 text-sm text-gray-300"></div>
         </div>
 
-        <a class="text-blue-500 mb-8 hover:text-blue-700 transition" href="../index.html">Go back to the shop</a>
-    </section>
+        <!-- Actions -->
+        <div class="flex flex-col sm:flex-row gap-3 w-full">
+            <a href="/PR_02/index.html"
+                class="flex-1 text-center bg-gradient-to-r from-blue-500 to-blue-700 hover:opacity-90 text-white text-sm font-semibold py-3 rounded-xl transition">
+                Volver a la tienda
+            </a>
+            <a href="/PR_02/pages/items.html"
+                class="flex-1 text-center bg-white/5 border border-white/10 hover:bg-white/10 text-white text-sm font-semibold py-3 rounded-xl transition">
+                Seguir comprando
+            </a>
+        </div>
 
+    </main>
+
+    <script src="/PR_02/assets/js/success.js"></script>
 </body>
-
 </html>

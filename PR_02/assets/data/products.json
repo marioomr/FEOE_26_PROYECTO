@@ -1,6 +1,8 @@
 [
   {
     "id": "4ac90730-29ab-436b-92b0-54e54a8869a0",
+    "brand": "Logitech G",
+    "category":"Keyboard",
     "name": "PRO X TKL",
     "description": "Teclado inalámbrico para juegos: interruptores mecánicos",
     "price": 239.99,
@@ -13,6 +15,8 @@
   },
   {
     "id": "f81e16f6-9f53-408d-b792-b2a3228b4108",
+    "brand": "Logitech G",
+    "category":"Mouse",
     "name": "PRO X SL 2 DEX",
     "description": "Ratón gaming ergonómico con alta precisión.",
     "price": 159.99,
@@ -25,6 +29,8 @@
   },
   {
     "id": "d2df5222-00fd-49e5-9817-f7252935649c",
+    "brand": "Logitech G",
+    "category":"Headset",
     "name": "PRO X WL",
     "description": "Auriculares inalámbricos para juegos 7.1 LIGHTSPEED",
     "price": 239.99,
@@ -37,6 +43,8 @@
   },
   {
     "id": "c7a27ad1-cef6-414a-9439-24b49068c770",
+    "brand": "Logitech G",
+    "category":"Wheel",
     "name": "PRO RACING WHEEL",
     "description": "Volante de simulación para juegos de carreras realistas.",
     "price": 549.99,
@@ -46,5 +54,73 @@
       "/PR_02/assets/img/wheel3.png"
     ],
     "colors": ["Black"]
+  },
+  {
+    "id": "5a107852-b15d-4b5a-9c54-19a29374a1e9",
+    "brand": "Corsair",
+    "category":"Mouse",
+    "name":"Sabre v2 PRO",
+    "description":"Wireless Mouse",
+    "price":139.99,
+    "images": [
+      "/PR_02/assets/img/corsairSabre.png"
+    ],
+    "colors": ["White"]
+
+  },
+  {
+    "id": "9d7c45a2-0160-492f-a68c-1e63a06e2624",
+    "brand": "Corsair",
+    "category":"Headset",
+    "name":"Virtuoso RGB",
+    "description":"Wireless headphones",
+    "price":209.99,
+    "images": [
+      "/PR_02/assets/img/corsairVirtuoso.png"
+    ],
+    "colors": ["White"]
+
+  },
+
+{
+    "id": "733e8a8b-f771-420f-8943-4ad8dc9063ba",
+    "brand": "Razer",
+    "category":"Mouse",
+    "name":"Mamba Elite Wired",
+    "description":"Raton de alta calidad",
+    "price":109.99,
+    "images": [
+      "/PR_02/assets/img/razerMouse.png"
+    ],
+    "colors": ["Black"]
+
+  },
+  
+{
+    "id": "d2b0b9b2-74df-4de7-8dc6-12a1a23d7291",
+    "brand": "Razer",
+    "category":"Keyboard",
+    "name":"Ornata V3 X",
+    "description":"Wired Keyboard",
+    "price":99.99,
+    "images": [
+      "/PR_02/assets/img/razerKeyboard.png"
+    ],
+    "colors": ["Black"]
+
+  },
+  {
+    "id": "a6d9c426-3be8-43b3-9e25-1e2b5b238b0f",
+    "brand": "Razer",
+    "category":"Headset",
+    "name":"Blackshark V2 X",
+    "description":"Wired headphones",
+    "price":49.99,
+    "images": [
+      "/PR_02/assets/img/razerHeadset.png"
+    ],
+    "colors": ["Black"]
+
   }
+  
 ]

@@ -1,149 +1,291 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main</title>
+    <title>ProdShop</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+<body class="bg-[#040711] min-h-screen text-white">
 
-<body class="bg-[#040711]">
-   <header class="bg-[#1d1f28] w-full shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
+    <!-- HEADER -->
+   <!-- HEADER -->
+<header class="bg-[#1d1f28]/95 backdrop-blur-sm w-full border-b border-white/5 sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center gap-8">
 
-                <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <a href="/PR_02/index.html" class="text-xl font-bold text-white">ProdShop</a>
-                </div>
+            <!-- Logo -->
+            <a href="/PR_02/index.html" class="flex items-center gap-2 flex-shrink-0">
+                <span class="text-base font-bold text-white tracking-tight">ProdShop</span>
+            </a>
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex md:items-center md:gap-6">
-                    <a href="/PR_02/pages/items.html" class="text-white hover:text-blue-400 transition">Productos</a>
-                    <a href="#" class="text-white hover:text-blue-400 transition">Explore</a>
-                    <a href="#" class="text-white hover:text-blue-400 transition">About Us</a>
-                </div>
+            <!-- Nav -->
+            <nav class="hidden md:flex items-center gap-1 flex-1">
+                <a href="/PR_02/pages/items.html"
+                    class="px-3 py-1.5 rounded-lg text-gray-200
+                     hover:text-white hover:bg-white/5 text-sm transition">
+                    Productos
+                </a>
+                <a href="#"
+                    class="px-3 py-1.5 rounded-lg text-gray-200
+                     hover:text-white hover:bg-white/5 text-sm transition">
+                    Explore
+                </a>
+                <a href="#"
+                    class="px-3 py-1.5 rounded-lg text-gray-200
+                     hover:text-white hover:bg-white/5 text-sm transition">
+                    About Us
+                </a>
+            </nav>
 
-                <!-- Right Section: Cart + Login -->
-                <div class="flex items-center gap-4">
+            <!-- Right: cart + login + hamburger -->
+            <div class="flex items-center gap-2">
 
-                    <!-- Cart Button -->
-                    <div class="relative">
-                        <button id="cartButton"
-                            class="flex items-center gap-1 text-white hover:text-blue-400 transition">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            <span class="hidden md:inline">Cart</span>
-                        </button>
+                <!-- Cart -->
+                <div class="relative">
+                    <button id="cartButton"
+                        class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-gray-200
+                         hover:text-white hover:bg-white/5 text-sm transition">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="hidden md:inline">Cart</span>
+                    </button>
 
-                        <!-- Mini Cart -->
-                        <div id="miniCart"
-                            class="absolute right-0 top-full mt-2 w-80 bg-[#1d1f28] text-white rounded-lg shadow-lg hidden z-50">
-                            <div id="miniCartItems" class="flex flex-col gap-2 p-4 max-h-96 overflow-y-auto">
-                                <!-- Productos se cargarán aquí dinámicamente -->
-                            </div>
-                            <div class="p-4 border-t border-gray-700 flex justify-between font-bold">
-                                <span>Total:</span>
-                                <span id="miniCartTotal">0€</span>
-                            </div>
-                            <div class="p-4 border-t border-gray-700">
-                                <a href="/PR_02/pages/cart.html"
-                                    class="w-full bg-blue-600 text-white py-2 rounded-lg text-center hover:bg-blue-700 transition">
-                                    Ver carrito
-                                </a>
-                            </div>
+                    <!-- Mini cart dropdown -->
+                    <div id="miniCart"
+                        class="hidden absolute right-0 top-full mt-2 w-80 bg-[#1d1f28] border border-white/10 rounded-xl shadow-2xl z-50">
+                        <div class="px-4 pt-4 pb-1 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-gray-200
+                             uppercase tracking-wider">Tu carrito</span>
+                        </div>
+                        <div id="miniCartItems" class="flex flex-col gap-3 px-4 py-3 max-h-64 overflow-y-auto"></div>
+                        <div class="px-4 py-3 border-t border-white/10 flex justify-between text-sm font-semibold text-white">
+                            <span>Total</span>
+                            <span id="miniCartTotal" class="text-blue-400">0€</span>
+                        </div>
+                        <div class="px-4 pb-4">
+                            <a href="/PR_02/pages/cart.html"
+                                class="block w-full text-center bg-gradient-to-r from-blue-500 to-blue-700 hover:opacity-90 text-white text-sm font-semibold py-2 rounded-lg transition">
+                                Ver carrito
+                            </a>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Login -->
-                    <div class="flex items-center gap-2 text-white">
-                        <a class="topA hover:text-blue-400 transition" href="/PR_02/pages/login.html">Login</a>
-                        <i class="fa-solid fa-circle-user"></i>
+                <!-- Login -->
+                <a href="/PR_02/pages/login.html"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-gray-200
+                     hover:text-white hover:bg-white/5 text-sm transition">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <span class="hidden md:inline">Login</span>
+                </a>
+
+                <!-- Hamburger -->
+                <button id="menuButton"
+                    class="md:hidden w-8 h-8 flex items-center justify-center rounded-lg text-gray-200
+                     hover:text-white hover:bg-white/5 transition">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-white/5 px-4 py-3 flex flex-col gap-1">
+        <a href="/PR_02/pages/items.html"
+            class="px-3 py-2 rounded-lg text-gray-200
+             hover:text-white hover:bg-white/5 text-sm transition">
+            Productos
+        </a>
+        <a href="#"
+            class="px-3 py-2 rounded-lg text-gray-200
+             hover:text-white hover:bg-white/5 text-sm transition">
+            Explore
+        </a>
+        <a href="#"
+            class="px-3 py-2 rounded-lg text-gray-200
+             hover:text-white hover:bg-white/5 text-sm transition">
+            About Us
+        </a>
+        <div class="border-t border-white/5 mt-2 pt-2">
+            <a href="/PR_02/pages/login.html"
+                class="px-3 py-2 rounded-lg text-gray-200
+                 hover:text-white hover:bg-white/5 text-sm transition flex items-center gap-2">
+                <i class="fa-solid fa-circle-user"></i> Login
+            </a>
+        </div>
+    </div>
+</header>
+
+    <!-- HERO BANNER -->
+    <section class="relative overflow-hidden bg-[#0a0d1a] border-b border-white/5">
+
+        <!-- Glow decorativo -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 right-0 w-[300px] h-[200px] bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col md:flex-row items-center gap-10">
+
+            <!-- Texto -->
+            <div class="flex-1 flex flex-col gap-5">
+                <span class="inline-flex items-center gap-2 text-xs font-semibold text-blue-400 bg-blue-500/10 border border-blue-500/20 rounded-full px-3 py-1 w-fit">
+                    <i class="fa-solid fa-bolt"></i> Gaming Gear Premium
+                </span>
+                <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight text-white">
+                    El equipo que<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
+                        marca la diferencia
+                    </span>
+                </h1>
+                <p class="text-gray-200
+                 text-base max-w-md leading-relaxed">
+                    Periféricos gaming de alta gama de las mejores marcas. Teclados, ratones, auriculares y más para llevar tu juego al siguiente nivel.
+                </p>
+                <div class="flex flex-wrap gap-3 mt-2">
+                    <a href="/PR_02/pages/items.html"
+                        class="bg-gradient-to-r from-blue-500 to-blue-700 hover:opacity-90 text-white text-sm font-semibold px-6 py-3 rounded-xl transition">
+                        Ver todos los productos
+                    </a>
+                    <a href="#destacados"
+                        class="bg-white/5 hover:bg-white/10 border border-white/10 text-white text-sm font-semibold px-6 py-3 rounded-xl transition">
+                        Destacados
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="flex gap-8 mt-4 pt-4 border-t border-white/5">
+                    <div>
+                        <p class="text-2xl font-bold text-white">3</p>
+                        <p class="text-xs text-gray-500 mt-0.5">Marcas top</p>
                     </div>
-
-                    <!-- Hamburger Button -->
-                    <div class="md:hidden">
-                        <button id="menuButton" class="text-white focus:outline-none">
-                            <i class="fa-solid fa-bars text-2xl"></i>
-                        </button>
+                    <div>
+                        <p class="text-2xl font-bold text-white">9+</p>
+                        <p class="text-xs text-gray-500 mt-0.5">Productos</p>
                     </div>
-
+                    <div>
+                        <p class="text-2xl font-bold text-white">24h</p>
+                        <p class="text-xs text-gray-500 mt-0.5">Envío express</p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="md:hidden hidden bg-[#1d1f28] px-4 pt-2 pb-4 flex flex-col gap-2">
-            <a href="#" class="text-white hover:text-blue-400 transition">Productos</a>
-            <a href="#" class="text-white hover:text-blue-400 transition">Explore</a>
-            <a href="#" class="text-white hover:text-blue-400 transition">About Us</a>
-        </div>
-    </header>
-
-
-    <section class="bg-transparent pt-6 pb-10">
-        <h1
-            class="font-sans text-3xl font-bold text-center rounded-xl w-180 mt-8 py-4 justify-self-center bg-[#1d1f28] text-white">
-            Bienvenido a nuestra tienda en línea
-        </h1>
-        <!--
-        <div class="flex flex-row flex-wrap gap-4 justify-center mt-10">
-            <div
-                class="flex flex-col items-center product-card rounded-xl border-2 border-blue-500 px-8 py-4 hover:bg-indigo-900">
-                <img class="w-40 h-40 object-contain" src="assets/img/keyboard.png">
-                <a href="pages/product.html?id=prod001" class="text-white">Gaming Keyboard</a>
-                <span class="text-white">79.99€</span>
+            <!-- Imagen hero -->
+            <div class="flex-1 flex items-center justify-center">
+                <div class="relative w-72 h-72">
+                    <div class="absolute inset-0 bg-blue-500/10 rounded-full blur-2xl"></div>
+                    <img src="/PR_02/assets/img/keyboard.png" alt="Gaming Keyboard"
+                        class="relative w-full h-full object-contain drop-shadow-2xl">
+                </div>
             </div>
-            <div
-                class="flex flex-col items-center product-card rounded-xl border-2 border-blue-500 px-8 py-4 hover:bg-indigo-900">
-                <img class="w-40 h-40 object-contain" src="assets/img/mouse.png">
-                <a href="pages/product.html?id=prod002" class="text-white">Gaming Mouse</a>
-                <span class="text-white">54.99€</span>
-            </div>
-            <div
-                class="flex flex-col items-center product-card rounded-xl border-2 border-blue-500 px-8 py-4 hover:bg-indigo-900">
-                <img class="w-40 h-40 object-contain" src="assets/img/headset.png">
-                <a href="pages/product.html?id=prod003" class="text-white">Gaming Headset</a>
-                <span class="text-white">129.99€</span>
-            </div>
-            <div
-                class="flex flex-col items-center product-card rounded-xl border-2 border-blue-500 px-8 py-4 hover:bg-indigo-900">
-                <img class="w-40 h-40 object-contain" src="assets/img/wheel.png">
-                <a href="pages/product.html?id=prod004" class="text-white">Wheel SIM Racing</a>
-                <span class="text-white">549.99€</span>
-            </div>
-        </div>
-        -->
-        <div id="productos" class="flex flex-row flex-wrap justify-center gap-6 mt-10"></div>
 
-    </section>
-
-    <section class="bg-transparent py-8">
-        <h2 class="font-sans text-2xl font-bold text-center justify-self-center bg-[#1d1f28] text-white w-full py-4">
-            ¿Por qué elegirnos?
-        </h2>
-        <div class="flex flex-row flex-wrap gap-30 justify-center mt-4 ">
-            <i class="fa-regular fa-handshake text-8xl item-center" style="color: rgb(68, 124, 252);"></i>
-            <ul class="text-white flex flex-col gap-2 justify-center list-disc marker:text-sky-400">
-                <li>Amplia selección de productos de alta calidad.</li>
-                <li>Precios competitivos y ofertas exclusivas.</li>
-                <li>Envío rápido y seguro a todo el mundo.</li>
-                <li>Atención al cliente excepcional.</li>
-            </ul>
         </div>
     </section>
 
-    <footer class="bg-transparent">
-        <div class="bg-[#1d1f28] text-white p-8 text-center ">
+    <!-- BRANDS BAR -->
+    <section class="border-b border-white/5 bg-[#0d1019]">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-wrap items-center justify-center gap-10">
+            <span class="text-xs text-gray-600 uppercase tracking-widest">Marcas</span>
+            <span class="text-gray-200
+             font-bold text-lg tracking-wide hover:text-white transition cursor-default">Logitech G</span>
+            <span class="text-gray-600 text-xl select-none">·</span>
+            <span class="text-gray-200
+             font-bold text-lg tracking-wide hover:text-white transition cursor-default">Corsair</span>
+            <span class="text-gray-600 text-xl select-none">·</span>
+            <span class="text-gray-200
+             font-bold text-lg tracking-wide hover:text-white transition cursor-default">Razer</span>
+        </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+    <section id="destacados" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+        <div class="flex items-end justify-between mb-8">
+            <div>
+                <p class="text-xs text-blue-400 font-semibold uppercase tracking-wider mb-1">Lo mejor</p>
+                <h2 class="text-2xl font-bold text-white">Productos Destacados</h2>
+            </div>
+            <a href="/PR_02/pages/items.html" class="text-sm text-gray-200
+             hover:text-white transition flex items-center gap-1">
+                Ver todos <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+        </div>
+
+        <!-- Cards inyectadas por JS -->
+        <div id="productos" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+    </section>
+
+    <!-- WHY US -->
+    <section class="border-t border-white/5 bg-[#0a0d1a]">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+            <div class="text-center mb-12">
+                <p class="text-xs text-blue-400 font-semibold uppercase tracking-wider mb-1">Nuestra propuesta</p>
+                <h2 class="text-2xl font-bold text-white">¿Por qué elegirnos?</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <div class="bg-[#1d1f28] border border-white/8 rounded-2xl p-6 flex flex-col gap-3 hover:border-blue-500/40 transition">
+                    <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center">
+                        <i class="fa-solid fa-star text-blue-400"></i>
+                    </div>
+                    <h3 class="text-white font-semibold text-sm">Alta Calidad</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">Seleccionamos solo los mejores productos de marcas líderes del mercado gaming.</p>
+                </div>
+
+                <div class="bg-[#1d1f28] border border-white/8 rounded-2xl p-6 flex flex-col gap-3 hover:border-blue-500/40 transition">
+                    <div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center">
+                        <i class="fa-solid fa-tag text-green-400"></i>
+                    </div>
+                    <h3 class="text-white font-semibold text-sm">Precios Competitivos</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">Precios ajustados y ofertas exclusivas para que siempre salgas ganando.</p>
+                </div>
+
+                <div class="bg-[#1d1f28] border border-white/8 rounded-2xl p-6 flex flex-col gap-3 hover:border-blue-500/40 transition">
+                    <div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center">
+                        <i class="fa-solid fa-truck-fast text-purple-400"></i>
+                    </div>
+                    <h3 class="text-white font-semibold text-sm">Envío Rápido</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">Envío express en 24h a todo el mundo con seguimiento en tiempo real.</p>
+                </div>
+
+                <div class="bg-[#1d1f28] border border-white/8 rounded-2xl p-6 flex flex-col gap-3 hover:border-blue-500/40 transition">
+                    <div class="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center">
+                        <i class="fa-solid fa-headset text-orange-400"></i>
+                    </div>
+                    <h3 class="text-white font-semibold text-sm">Soporte 24/7</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">Atención al cliente excepcional disponible en todo momento para ayudarte.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center flex flex-col items-center gap-5">
+            <h2 class="text-3xl font-bold text-white">¿Listo para jugar al siguiente nivel?</h2>
+            <p class="text-gray-200
+             text-sm max-w-md">Explora todo nuestro catálogo y encuentra el equipo perfecto para ti.</p>
+            <a href="/PR_02/pages/items.html"
+                class="bg-gradient-to-r from-blue-500 to-blue-700 hover:opacity-90 text-white text-sm font-semibold px-8 py-3 rounded-xl transition">
+                Explorar catálogo
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#1d1f28] border-t border-white/10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+            <p class="font-bold text-white">ProdShop</p>
             <p>&copy; 2024 ProdShop. Todos los derechos reservados.</p>
-            <p>Contacto:
-                <a class="text-blue-500" href="mailto:contacto@prodshop.com">contacto@prodshop.com</a>
-            </p>
+            <a href="mailto:contacto@prodshop.com" class="text-blue-400 hover:text-blue-300 transition">contacto@prodshop.com</a>
         </div>
     </footer>
+
     <script src="/PR_02/assets/js/main.js"></script>
 </body>
 </html>
